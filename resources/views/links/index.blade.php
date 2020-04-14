@@ -37,7 +37,7 @@
   </head>
   <body class="bg-light">
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-      <a class="navbar-brand mr-auto mr-lg-0" href="/">Shitoto</a>
+      <a class="navbar-brand mr-auto mr-lg-0" href="/">Shitoto.com</a>
       <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -45,7 +45,7 @@
       <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="">Admin Dashboard <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="{{ route('dash.admin.index') }}">Admin Dashboard <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ route('admin.links.index') }}">All Links</a>
