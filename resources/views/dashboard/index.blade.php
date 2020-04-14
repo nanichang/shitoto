@@ -58,7 +58,7 @@
 
 
     <main role="main" class="container">
-    <h4>Earn Browsing Data By Sharing Links</h4>
+      <h4>Earn Browsing Data By Sharing Links</h4>
       @if(Sentinel::check())
         <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-dark rounded shadow-sm">
           <div class="lh-100">
@@ -103,7 +103,7 @@
                         </div>
                         <div class="modal-body">
                           <!-- <a class="btn btn-primary btn-sm" href="http://www.facebook.com/share.php?u={{ $link->url }}" target="_blank">Facebook</a> -->
-                          <a class="btn btn-primary btn-lg" href="https://twitter.com/share?url={{ $link->url }}&amp;text={{ $link->title }}-@SHITOTOCOM&amp;hashtags=#{{ substr($user->phone, -4) }}" target="_blank">Twitter</a>
+                          <a class="btn btn-primary btn-lg" href="https://twitter.com/share?url={{ $link->url }}&amp;text={{ $link->title }}-@SHITOTOCOM&amp;hashtags=SHI{{ substr($user->phone, -4) }}" target="_blank">Twitter</a>
                           <!-- <a class="btn btn-primary btn-sm" href="https://web.whatsapp.com/send?text={{ $link->url }}" target="_blank">Whatsapp</a> -->
                           <!-- <a class="btn btn-primary btn-sm" href="https://plus.google.com/share?url={{ $link->url }}" target="_blank">Google Plus</a> -->
                           <!-- <a class="btn btn-primary btn-sm" href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{ $link->url }}" target="_blank">Linkedin</a> -->
