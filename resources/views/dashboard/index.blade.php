@@ -9,8 +9,6 @@
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/css/bootstrap.min.css') }}">
 
     <meta name="theme-color" content="#563d7c">
-
-
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -103,14 +101,14 @@
                         </div>
                         <div class="modal-body">
                           <!-- <a class="btn btn-primary btn-sm" href="http://www.facebook.com/share.php?u={{ $link->url }}" target="_blank">Facebook</a> -->
-                          <a class="btn btn-primary btn-lg" href="https://twitter.com/share?url={{ $link->url }}&amp;text={{ $link->title }}-@SHITOTOCOM&amp;hashtags=SHI{{ substr($user->phone, -4) }}" target="_blank">Twitter</a>
+                          <a class="btn btn-primary btn-lg remove-attr" href="https://twitter.com/share?url={{ $link->url }}&amp;text={{ $link->title }}-@SHITOTOCOM&amp;hashtags=SHI{{ substr($user->phone, -4) }}" target="_blank">Twitter</a>
                           <!-- <a class="btn btn-primary btn-sm" href="https://web.whatsapp.com/send?text={{ $link->url }}" target="_blank">Whatsapp</a> -->
                           <!-- <a class="btn btn-primary btn-sm" href="https://plus.google.com/share?url={{ $link->url }}" target="_blank">Google Plus</a> -->
                           <!-- <a class="btn btn-primary btn-sm" href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{ $link->url }}" target="_blank">Linkedin</a> -->
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                          <button type="submit" class="btn btn-primary">Completed</button>
+                          <button type="submit" class="btn btn-primary " id="completed" onclick="enableBtn()">Completed</button>
                         </div>
                       </form>
                     </div>
@@ -138,6 +136,17 @@
       <script>window.jQuery || document.write('<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"><\/script>')</script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
       <script src="{{ URL::asset('assets/js/offcanvas.js') }}"></script>
+
+      <script>
+        $(document).ready(function() {
+          $(':input[type="submit"]').prop('disabled', true);
+          $('.remove-attr').click(function() {
+            // if($(this).val() != '') {
+              $(':input[type="submit"]').prop('disabled', false);
+            // }
+          });
+        });
+      </script>
     </body>
 </body> 
 </html>
