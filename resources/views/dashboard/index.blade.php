@@ -57,7 +57,8 @@
     </nav>
 
 
-    <main role="main" class="container" style="margin-top: 80px">
+    <main role="main" class="container">
+    <h4>Earn Browsing Data By Sharing Links</h4>
       @if(Sentinel::check())
         <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-dark rounded shadow-sm">
           <div class="lh-100">
