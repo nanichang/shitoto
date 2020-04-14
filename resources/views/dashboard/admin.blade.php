@@ -41,6 +41,23 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
+      <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="">Admin Dashboard <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('admin.links.index') }}">All Links</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('admin.links.create') }}">Create Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('dash.admin.index') }}">Users</a>
+          </li>
+        
+      </div>
+
     </nav>
 
 

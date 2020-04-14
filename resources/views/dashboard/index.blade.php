@@ -41,17 +41,17 @@
       </button>
 
       <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#"> <span class="sr-only">(current)</span></a>
-      </li>
-      
-    </ul>
-    <form class="form-inline my-2 my-lg-0" method="post" action="{{ route('auth.logout.post') }}">
-      @csrf
-      <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Logout</button>
-    </form>
-  </div>
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"> <span class="sr-only">(current)</span></a>
+          </li>
+          
+        </ul>
+        <form class="form-inline my-2 my-lg-0" method="post" action="{{ route('auth.logout.post') }}">
+          @csrf
+          <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Logout</button>
+        </form>
+      </div>
 
     </nav>
 
