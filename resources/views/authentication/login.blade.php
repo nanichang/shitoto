@@ -51,6 +51,7 @@
       <small>
 				<ul>
 					<li>Click on "Share Now" select Twitter or Facebook or both to share.</li>
+          <!-- <li>Add the last 4 digits of your phone number using # tag (e.g. #9214)</li> -->
 					<li>Click Completed when done.</li>
 					<li>The more link you share on your page, the more you earn </li>
 					<li>Payouts to your registered phone number is carried out at every 200MB. </li>

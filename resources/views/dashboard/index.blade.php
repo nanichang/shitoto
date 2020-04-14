@@ -77,6 +77,9 @@
                 <div class="d-flex justify-content-between align-items-center w-100">
                   <strong class="text-gray-dark">{{ $link->title }}</strong>
                   <!-- <a href="#">Share</a> -->
+                  @php($shared as $s)
+
+                  @endphp
                   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter{{ $link->id }}">
                     Share now
                   </button>
@@ -101,7 +104,7 @@
                           </button>
                         </div>
                         <div class="modal-body">
-                          <a class="btn btn-primary btn-sm" href="http://www.facebook.com/share.php?u={{ $link->url }}" target="_blank">Facebook</a>
+                          <!-- <a class="btn btn-primary btn-sm" href="http://www.facebook.com/share.php?u={{ $link->url }}" target="_blank">Facebook</a> -->
                           <a class="btn btn-primary btn-sm" href="https://twitter.com/share?url={{ $link->url }}&amp;text={{ $link->title }}-@SHITOTOCOM&amp;hashtags=#{{ substr($user->phone, -4) }}" target="_blank">Twitter</a>
                           <!-- <a class="btn btn-primary btn-sm" href="https://web.whatsapp.com/send?text={{ $link->url }}" target="_blank">Whatsapp</a> -->
                           <!-- <a class="btn btn-primary btn-sm" href="https://plus.google.com/share?url={{ $link->url }}" target="_blank">Google Plus</a> -->
