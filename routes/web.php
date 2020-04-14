@@ -38,7 +38,13 @@ Route::post('shared/{id}', 'DashboardController@shared')->name('shared.post');
 
 
 Route::group(['prefix' => 'admin'], function() {
-    Route::get('/', 'DashboardController@admin')->name('dash.admin.index');
+  Route::get('/', 'DashboardController@admin')->name('dash.admin.index');
 
-    Route::get('/reward/{id}', 'DashboardController@reward')->name('admin.reward');
+	Route::get('/reward/{id}', 'DashboardController@reward')->name('admin.reward');
+	
+	Route::group(['prefix' => 'links'], function() {
+		Route::get('/', 'LinksController@index')->name('admin.links.index');
+		Route::get('/create', 'LinksController@create')->name('admin.links.create');
+		Route::post('/create', 'LinksController@store')->name('admin.links.store');
+	});
 });

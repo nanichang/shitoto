@@ -4,17 +4,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <meta name="generator" content="Jekyll v3.8.6">
-    <title>Offcanvas template · Bootstrap</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/offcanvas/">
-
+    <title>Shitoto.com - Earn Browsing Data By Sharing Links</title>
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/css/bootstrap.min.css') }}">
 
-<meta name="theme-color" content="#563d7c">
+    <meta name="theme-color" content="#563d7c">
 
 
     <style>
@@ -39,16 +33,15 @@
       }
     </style>
     <!-- Custom styles for this template -->
-    <link href="offcanvas.css" rel="stylesheet">
   </head>
   <body class="bg-light">
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-  <a class="navbar-brand mr-auto mr-lg-0" href="/">Shitoto</a>
-  <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+      <a class="navbar-brand mr-auto mr-lg-0" href="/">Shitoto</a>
+      <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-</nav>
+    </nav>
 
 
 <main role="main" class="container" style="margin-top: 80px">
@@ -73,7 +66,7 @@
               <a href="#">Points: {{ $link->shared_points }}</a>
               
 
-              @if($link->shared_points >= 2040)
+              @if($link->shared_points >= 200000)
                 <a class="btn btn-primary" href="{{ route('admin.reward', $link->id) }}">
                   Reward User
                 </a>
