@@ -141,9 +141,7 @@
         $(document).ready(function() {
           $(':input[type="submit"]').prop('disabled', true);
           $('.remove-attr').click(function() {
-            // if($(this).val() != '') {
-              $(':input[type="submit"]').prop('disabled', false);
-            // }
+            $(':input[type="submit"]').prop('disabled', false);
           });
         });
       </script>
