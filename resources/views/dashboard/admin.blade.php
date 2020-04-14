@@ -33,6 +33,7 @@
       }
     </style>
     <!-- Custom styles for this template -->
+    <link href="{{ URL::asset('assets/css/offcanvas.css') }}" rel="stylesheet">
   </head>
   <body class="bg-light">
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
@@ -78,12 +79,20 @@
         <div class="media text-muted pt-3">
           <!-- <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"/><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg> -->
           <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-            <div class="d-flex justify-content-between align-items-center w-100">
-              <strong class="text-gray-dark">Phone: {{ $link->phone }} ({{ $link->network_name }})</strong>
-              <a href="#">Points: {{ $link->shared_points }}</a>
+            <div class="d-flex justify-content-between align-items-center ">
               
+                        
 
-              @if($link->shared_points >= 200000)
+            <div class="table-responsive">
+
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <th scope="row"><strong class="text-gray-dark">Phone: {{ $link->phone }} ({{ $link->network_name }})</strong> </th>
+                    <td><strong class="text-gray-dark">Email: {{ $link->email }}</strong></td>
+                    <td><a href="#">Points: {{ $link->shared_points }}</a>    </td>
+                    <td>
+                    @if($link->shared_points >= 200000)
                 <a class="btn btn-primary" href="{{ route('admin.reward', $link->id) }}">
                   Reward User
                 </a>
@@ -92,6 +101,11 @@
                   Reward User
                 </a>
               @endif
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
             </div>
             <!-- <span class="d-block"> -->
             
@@ -122,5 +136,6 @@
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
 <script>window.jQuery || document.write('<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"><\/script>')</script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-        <script src="offcanvas.js"></script></body>
+<script src="{{ URL::asset('assets/js/offcanvas.js') }}"></script>
+</body>
 </html>
