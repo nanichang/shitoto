@@ -22,8 +22,8 @@ class DashboardController extends Controller
             $user = Sentinel::getUser();
             $links = Link::all();
 
-            $shared = DB::table('shared_users')->where('user_id', $user->id)->get();
-            dd($shared);
+            $shared = DB::table('shared_users')->get();
+            // dd($shared);
             return view('dashboard.index')->with('user', $user)->with('links', $links)->with('shared', $shared);
         }
     }
