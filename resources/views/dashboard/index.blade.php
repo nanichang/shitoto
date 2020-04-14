@@ -77,19 +77,11 @@
               <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
                 <div class="d-flex justify-content-between align-items-center w-100">
                   <strong class="text-gray-dark">{{ $link->title }}</strong>
-                  <!-- <a href="#">Share</a> -->
-
-                  
-                  
-                  @if($shared->contains('user_id', Sentinel::getUser()->id) == Sentinel::getUser()->id)
-                    <button type="button" disabled class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter{{ $link->id }}">
-                      Share now
-                    </button>
-                  @else
+            
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter{{ $link->id }}">
                       Share now
                     </button>
-                  @endif
+
                 </div>
                 
                 </span>
