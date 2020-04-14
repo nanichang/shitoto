@@ -22,7 +22,7 @@ Route::group(['prefix' => 'auth'], function() {
 	Route::get('/register', 'RegistrationController@register')->name('auth.register.get');
 	Route::post('/register', 'RegistrationController@store')->name('auth.register.post');
 
-	Route::get('logout', 'AuthenticationController@logout');
+	Route::post('logout', 'AuthenticationController@logout')->name('auth.logout.post');
 });
 
 // Dashboard Route Groups
