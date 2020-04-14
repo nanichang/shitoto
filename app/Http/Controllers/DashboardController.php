@@ -47,7 +47,6 @@ class DashboardController extends Controller
 
     public function admin() {
         $users = User::all();
-        // dd($users);
         return view('dashboard.admin')->with('users', $users);
     }
 
