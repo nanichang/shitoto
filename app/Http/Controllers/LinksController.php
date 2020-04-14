@@ -67,6 +67,22 @@ class LinksController extends Controller
     
     public function delete($id)
     {
-        //
+        try{
+            $news = $this->repo->remove($id);
+            if ($news) {
+                $notification = array(
+                    'message' => "Item deleted successfully",
+                    'alert-type' => 'success'
+                );
+            return redirect()->back()->with($notification);
+            }
+        }
+        catch (\Exception $e){			
+            $error = array(
+                'message' => 'Can not delete news item, other records depends on it',
+                'alert-type' => 'warning'
+            );
+            return back()->with($error);				
+        }
     }
 }
