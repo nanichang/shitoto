@@ -36,7 +36,7 @@
   </head>
   <body class="bg-light">
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-      <a class="navbar-brand mr-auto mr-lg-0" href="/">Shitoto</a>
+    <a class="navbar-brand mr-auto mr-lg-0" href="/">Shitoto.com</a>
       <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -55,7 +55,7 @@
           <li class="nav-item">
             <a class="nav-link" href="{{ route('dash.admin.index') }}">Users</a>
           </li>
-        
+        </ul>
       </div>
 
     </nav>
