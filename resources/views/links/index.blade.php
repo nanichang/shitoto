@@ -74,7 +74,7 @@
   <div class="my-3 p-3 bg-white rounded shadow-sm">
     <h6 class="border-bottom border-gray pb-2 mb-0">Shareable Links</h6>
 
-    @if(count($links) > 1)
+    @if(count($links) > 0)
       @foreach($links as $link)
       <div class="media text-muted pt-3">
           <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
