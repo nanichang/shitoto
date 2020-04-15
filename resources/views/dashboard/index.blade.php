@@ -121,17 +121,20 @@
                       <form action="{{ route('shared.post', $link->id) }}" method="post">
                         @csrf
                         <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalCenterTitle">Share Now </h5>
+                          <h5 class="modal-title" id="exampleModalCenterTitle">Select your Social Media to Share </h5>
                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                           </button>
                         </div>
                         <div class="modal-body">
-                          <!-- <a class="btn btn-primary btn-sm" href="http://www.facebook.com/share.php?u={{ $link->url }}" target="_blank">Facebook</a> -->
-                          <a class="btn btn-primary btn-lg remove-attr" href="https://twitter.com/share?url={{ $link->url }}&amp;text={{ $link->title }}-@SHITOTOCOM&amp;hashtags=SHI{{ substr($user->phone, -4) }}" target="_blank">Twitter</a>
+                          <p class="alert alert-warning" role="alert"><i>For facebook, you must like and mention us @Shitoto.com</i></p>
+                          <p>
+                          <a class="btn btn-primary btn-lg remove-attr" href="http://www.facebook.com/share.php?u={{ $link->url }}" target="_blank">Facebook</a>
+                          <a class="btn btn-primary btn-lg remove-attr" href="https://twitter.com/share?url={{ $link->url }}&amp;text={{ $link->title }}-@SHITOTOCOM&amp;hashtags=SHI{{ substr($user->phone, -4) }},SHITOTO" target="_blank">Twitter</a>
                           <!-- <a class="btn btn-primary btn-sm" href="https://web.whatsapp.com/send?text={{ $link->url }}" target="_blank">Whatsapp</a> -->
                           <!-- <a class="btn btn-primary btn-sm" href="https://plus.google.com/share?url={{ $link->url }}" target="_blank">Google Plus</a> -->
                           <!-- <a class="btn btn-primary btn-sm" href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{ $link->url }}" target="_blank">Linkedin</a> -->
+                          </p><p><em>Click on Completed after sharing to earn your data point</em></p>
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
