@@ -101,7 +101,7 @@
                         </div>
                         <div class="modal-body">
                           <p>
-                          <!-- <a class="btn btn-primary btn-sm" href="http://www.facebook.com/share.php?u={{ $link->url }}" target="_blank">Facebook</a> -->
+                          <a class="btn btn-primary btn-lg remove-attr" href="http://www.facebook.com/share.php?u={{ $link->url }}" target="_blank">Facebook</a>
                           <a class="btn btn-primary btn-lg remove-attr" href="https://twitter.com/share?url={{ $link->url }}&amp;text={{ $link->title }}-@SHITOTOCOM&amp;hashtags=SHI{{ substr($user->phone, -4) }},SHITOTO" target="_blank">Twitter</a>
                           <!-- <a class="btn btn-primary btn-sm" href="https://web.whatsapp.com/send?text={{ $link->url }}" target="_blank">Whatsapp</a> -->
                           <!-- <a class="btn btn-primary btn-sm" href="https://plus.google.com/share?url={{ $link->url }}" target="_blank">Google Plus</a> -->
