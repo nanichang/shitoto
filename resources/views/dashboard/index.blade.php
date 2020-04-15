@@ -94,7 +94,7 @@
                       <form action="{{ route('shared.post', $link->id) }}" method="post">
                         @csrf
                         <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalCenterTitle">Share Now </h5>
+                          <h5 class="modal-title" id="exampleModalCenterTitle">Select your Social Media to Share </h5>
                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                           </button>
