@@ -100,7 +100,7 @@
                           </button>
                         </div>
                         <div class="modal-body">
-                          <p><i>For facebook, you must like and mention us @Shitoto.com</i></p>
+                          <p class="alert alert-warning" role="alert"><i>For facebook, you must like and mention us @Shitoto.com</i></p>
                           <p>
                           <a class="btn btn-primary btn-lg remove-attr" href="http://www.facebook.com/share.php?u={{ $link->url }}" target="_blank">Facebook</a>
                           <a class="btn btn-primary btn-lg remove-attr" href="https://twitter.com/share?url={{ $link->url }}&amp;text={{ $link->title }}-@SHITOTOCOM&amp;hashtags=SHI{{ substr($user->phone, -4) }},SHITOTO" target="_blank">Twitter</a>
