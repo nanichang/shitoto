@@ -23,14 +23,13 @@ class DashboardController extends Controller
             $links = Link::orderBy('id', 'desc')->get();
 
             $shared = DB::table('shared_users')->where('user_id', $user->id)->get();
-            // dd($links);
+            // $shared = DB::table('shared_users')->pluck('user_id')->toArray();
+            // dd($shared);
             return view('dashboard.index')->with('user', $user)->with('links', $links)->with('shared', $shared);
         }
     }
 
     public function shared(Request $request, $id) {
-        // dd($id);
-        // $link = Link::where('id', $id)->first();
         $user = Sentinel::getUser();
 
         $shared = DB::table('shared_users')->insert(

@@ -57,6 +57,24 @@
 
     <main role="main" class="container">
       <h4>Earn Browsing Data By Sharing Links</h4>
+
+      <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-dark rounded shadow-sm">
+        <div class="lh-100">
+          <h6 class="mb-0 text-white lh-100">How to Earn Browsing Data</h6>
+          <small>
+            <ul>
+              <li>Click on "Share Now" select Twitter or Facebook or both to share.</li>
+              <!-- <li>Add the last 4 digits of your phone number using # tag (e.g. #9214)</li> -->
+              <li>Click Completed when done.</li>
+              <li>The more link you share on your page, the more you earn </li>
+              <li>Payouts to your registered phone number is carried out at every 200MB. </li>
+              <li>Request for payouts through Twitter and Facebook DMs or Mentions with your phone number</li>
+            </ul>
+          </small>
+          <h6>NOTE: We Compare your points against the links on your social media profile, they have to match.</h6>
+        </div>
+      </div>
+      
       @if(Sentinel::check())
         <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-dark rounded shadow-sm">
           <div class="lh-100">
@@ -76,10 +94,20 @@
               <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
                 <div class="d-flex justify-content-between align-items-center w-100">
                   <strong class="text-gray-dark">{{ $link->title }}</strong>
-            
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter{{ $link->id }}">
-                      Share
-                    </button>
+
+
+                  @foreach($shared as $s)
+                    @if($s->user_id === Sentinel::getUser()->id )
+                      <button type="button" disabled class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter{{ $link->id }}">
+                        Share
+                      </button>
+                    @else
+                      <button type="button"  class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter{{ $link->id }}">
+                        Share
+                      </button>
+                    @endif
+                  @endforeach
+                    
 
                 </div>
                 
