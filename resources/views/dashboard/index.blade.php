@@ -78,7 +78,7 @@
                   <strong class="text-gray-dark">{{ $link->title }}</strong>
             
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter{{ $link->id }}">
-                      Share now
+                      Share
                     </button>
 
                 </div>
