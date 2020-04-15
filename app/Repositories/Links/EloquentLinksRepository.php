@@ -44,6 +44,6 @@ class EloquentLinksRepository implements LinksContract {
     // Remove a Link
     public function remove($id) {
         $link = $this->findById($id);
-        return $link->delete();
+        return $link->forceDelete();
     }
 }

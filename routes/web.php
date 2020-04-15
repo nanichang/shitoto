@@ -46,6 +46,6 @@ Route::group(['prefix' => 'admin'], function() {
 		Route::get('/', 'LinksController@index')->name('admin.links.index');
 		Route::get('/create', 'LinksController@create')->name('admin.links.create');
 		Route::post('/create', 'LinksController@store')->name('admin.links.store');
-		Route::get('/delete/{id}', 'LinksController@delete')->name('admin.links.delete');
+		Route::delete('/delete/{id}', 'LinksController@delete')->name('admin.links.delete');
 	});
 });

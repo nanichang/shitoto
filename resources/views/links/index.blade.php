@@ -81,9 +81,15 @@
             <div class="d-flex justify-content-between align-items-center w-100">
               <strong class="text-gray-dark">{{ $link->title }}</strong>
               <!-- <a href="#">Share</a> -->
-              <a href="{{ route('admin.links.delete', $link->id) }}" class="btn btn-danger">
-                Delete
-              </a>
+              
+
+              <form method="post" action="{{ route('admin.links.delete', $link->id) }}">
+                @method('DELETE')
+                @csrf
+                <button type="submit" class="btn btn-danger">
+                  Delete
+                </button>
+              </form>
               
             </div>
             <!-- <span class="d-block"> -->
