@@ -20,10 +20,10 @@ class DashboardController extends Controller
             return redirect()->route('auth.login.get');
         }else {
             $user = Sentinel::getUser();
-            $links = Link::all();
+            $links = Link::orderBy('id', 'desc')->get();
 
             $shared = DB::table('shared_users')->where('user_id', $user->id)->get();
-            // dd($shared);
+            // dd($links);
             return view('dashboard.index')->with('user', $user)->with('links', $links)->with('shared', $shared);
         }
     }
@@ -46,7 +46,7 @@ class DashboardController extends Controller
 
 
     public function admin() {
-        $users = User::all();
+        $users = User::orderBy('id', 'desc')->get();
         // dd($users);
         return view('dashboard.admin')->with('users', $users);
     }
