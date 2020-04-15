@@ -95,18 +95,21 @@
                 <div class="d-flex justify-content-between align-items-center w-100">
                   <strong class="text-gray-dark">{{ $link->title }}</strong>
 
+                  @php $found = false; @endphp
+
                   @foreach($shared as $s)
-                    @if($s->user_id === Sentinel::getUser()->id )
-                      <button type="button" disabled class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter{{ $link->id }}">
-                        Share now
-                      </button>
-                    @else
-                      <button type="button"  class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter{{ $link->id }}">
-                        Share now
-                      </button>
+                    @if($s->link_id === $link->id )
+                      @php $found = true; @endphp
+                      
+                      @php break @endphp
                     @endif
                   @endforeach
-                    
+                  
+                  @if(!$found)
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter{{ $link->id }}">
+                        Share now
+                    </button>
+                  @endif                 
 
                 </div>
                 
@@ -117,33 +120,33 @@
             <!-- Modal -->
             <div class="modal fade" id="exampleModalCenter{{ $link->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                      <form action="{{ route('shared.post', $link->id) }}" method="post">
-                        @csrf
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalCenterTitle">Select your Social Media to Share </h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div class="modal-body">
-                          <p class="alert alert-warning" role="alert"><i>For facebook, you must like and mention us @Shitoto.com</i></p>
-                          <p>
-                          <a class="btn btn-primary btn-lg remove-attr" href="http://www.facebook.com/share.php?u={{ $link->url }}" target="_blank">Facebook</a>
-                          <a class="btn btn-primary btn-lg remove-attr" href="https://twitter.com/share?url={{ $link->url }}&amp;text={{ $link->title }}-@SHITOTOCOM&amp;hashtags=SHI{{ substr($user->phone, -4) }},SHITOTO" target="_blank">Twitter</a>
-                          <!-- <a class="btn btn-primary btn-sm" href="https://web.whatsapp.com/send?text={{ $link->url }}" target="_blank">Whatsapp</a> -->
-                          <!-- <a class="btn btn-primary btn-sm" href="https://plus.google.com/share?url={{ $link->url }}" target="_blank">Google Plus</a> -->
-                          <!-- <a class="btn btn-primary btn-sm" href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{ $link->url }}" target="_blank">Linkedin</a> -->
-                          </p><p><em>Click on Completed after sharing to earn your data point</em></p>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                          <button type="submit" class="btn btn-primary " id="completed" onclick="enableBtn()">Completed</button>
-                        </div>
-                      </form>
-                    </div>
+                  <div class="modal-content">
+                    <form action="{{ route('shared.post', $link->id) }}" method="post">
+                      @csrf
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalCenterTitle">Select your Social Media to Share </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <p class="alert alert-warning" role="alert"><i>For facebook, you must like and mention us @Shitoto.com</i></p>
+                        <p>
+                        <a class="btn btn-primary btn-lg remove-attr" href="http://www.facebook.com/share.php?u={{ $link->url }}" target="_blank">Facebook</a>
+                        <a class="btn btn-primary btn-lg remove-attr" href="https://twitter.com/share?url={{ $link->url }}&amp;text={{ $link->title }}-@SHITOTOCOM&amp;hashtags=SHI{{ substr($user->phone, -4) }},SHITOTO" target="_blank">Twitter</a>
+                        <!-- <a class="btn btn-primary btn-sm" href="https://web.whatsapp.com/send?text={{ $link->url }}" target="_blank">Whatsapp</a> -->
+                        <!-- <a class="btn btn-primary btn-sm" href="https://plus.google.com/share?url={{ $link->url }}" target="_blank">Google Plus</a> -->
+                        <!-- <a class="btn btn-primary btn-sm" href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{ $link->url }}" target="_blank">Linkedin</a> -->
+                        </p><p><em>Click on Completed after sharing to earn your data point</em></p>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary " id="completed" onclick="enableBtn()">Completed</button>
+                      </div>
+                    </form>
                   </div>
                 </div>
+              </div>
             @endforeach
           @else
             <div class="media text-muted pt-3">
